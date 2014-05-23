@@ -15,3 +15,11 @@ var ICalDateParser = require('ical-date-parser');
 
 new ICalDateParser(icalDate).parse();
 ```
+
+## Test
+
+Run tests:
+
+```
+$ npm test
+```
