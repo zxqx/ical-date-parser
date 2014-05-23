@@ -4,7 +4,7 @@
   "description": "Convert iCal formatted date to native Date object",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape ./test/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/zakangelle/ical-date-parser/issues"
   },
-  "homepage": "https://github.com/zakangelle/ical-date-parser"
+  "homepage": "https://github.com/zakangelle/ical-date-parser",
+  "devDependencies": {
+    "tape": "^2.13.1"
+  }
 }
