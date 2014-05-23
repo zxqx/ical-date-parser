@@ -9,6 +9,7 @@ function ICalDateParser(d)
 ICalDateParser.prototype.parse = function()
 {
   var date = this._date;
+  if (!date) throw 'No date specified';
 
   var year   = date.substr(0, 4);
   var month  = parseInt(date.substr(4, 2), 10) -1;
