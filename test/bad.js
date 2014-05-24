@@ -22,7 +22,7 @@ test('Empty string throws error', function(t) {
   });
 });
 
-test('Invalid input format', function(t) {
+test('Invalid input format throws error', function(t) {
   t.plan(7);
   t.throws(function() {
     new ICalDateParser('20140422X233000Z').parse();
