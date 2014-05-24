@@ -2,6 +2,9 @@
 
 Provides a simple class for parsing [iCal formatted dates](http://www.kanzaki.com/docs/ical/dateTime.html) into native Date objects.
 
+[![browser support](https://ci.testling.com/zakangelle/ical-date-parser.png)
+](https://ci.testling.com/zakangelle/ical-date-parser)
+
 ## Installation
 
 ```
