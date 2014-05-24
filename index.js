@@ -11,7 +11,7 @@ ICalDateParser.prototype.parse = function()
   var date = this._date;
 
   if (!date) throw 'No date specified';
-  if (!validFormat(date)) throw 'Invalid format';
+  if (!ICalDateParser.validateFormat(date)) throw 'Invalid format';
 
   var year   = date.substr(0, 4);
   var month  = parseInt(date.substr(4, 2), 10) -1;
@@ -25,7 +25,7 @@ ICalDateParser.prototype.parse = function()
   return this.parsedDate;
 };
 
-function validFormat(date)
+ICalDateParser.validateFormat = function(date)
 {
   var T_INDEX = 8;
   var Z_INDEX = 15;
@@ -41,4 +41,4 @@ function validFormat(date)
     if (i !== T_INDEX && i !== Z_INDEX && isNaN(parseInt(char))) return false; 
     else return true;
   });
-}
+};
