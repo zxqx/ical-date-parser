@@ -14,3 +14,10 @@ test('Undefined throws error', function(t) {
     new ICalDateParser(undefined).parse();
   });
 });
+
+test('Empty string throws error', function(t) {
+  t.plan(1);
+  t.throws(function() {
+    new ICalDateParser('').parse();
+  });
+});
