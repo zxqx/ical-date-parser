@@ -32,13 +32,13 @@ function validFormat(date)
 
   var d = date.split('');
 
+  if (!d instanceof String) return false;
   if (d.length !== 16) return false;
   if (d[T_INDEX] !== 'T') return false;
   if (d[Z_INDEX] !== 'Z') return false;
 
-  d.forEach(function(char, i) {
+  return d.every(function(char, i) {
     if (i !== T_INDEX && i !== Z_INDEX && isNaN(parseInt(char))) return false; 
+    else return true;
   });
-
-  return true;
 }

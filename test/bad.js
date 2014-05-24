@@ -23,13 +23,17 @@ test('Empty string throws error', function(t) {
 });
 
 test('Invalid input format', function(t) {
-  t.plan(6);
+  t.plan(7);
   t.throws(function() {
     new ICalDateParser('20140422X233000Z').parse();
   });
 
   t.throws(function() {
     new ICalDateParser('20140422T233000Y').parse();
+  });
+
+  t.throws(function() {
+    new ICalDateParser('20a40422T233000Z').parse();
   });
   
   t.throws(function() {
@@ -41,7 +45,7 @@ test('Invalid input format', function(t) {
   });
 
   t.throws(function() {
-    new ICalDateParser('919191919191919197').parse();
+    new ICalDateParser(919191919191919197).parse();
   });
 
   t.throws(function() {
