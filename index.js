@@ -9,7 +9,9 @@ function ICalDateParser(d)
 ICalDateParser.prototype.parse = function()
 {
   var date = this._date;
+
   if (!date) throw 'No date specified';
+  if (!validFormat(date)) throw 'Invalid format';
 
   var year   = date.substr(0, 4);
   var month  = parseInt(date.substr(4, 2), 10) -1;
@@ -22,3 +24,21 @@ ICalDateParser.prototype.parse = function()
   
   return this.parsedDate;
 };
+
+function validFormat(date)
+{
+  var T_INDEX = 8;
+  var Z_INDEX = 15;
+
+  var d = date.split('');
+
+  if (d.length !== 16) return false;
+  if (d[T_INDEX] !== 'T') return false;
+  if (d[Z_INDEX] !== 'Z') return false;
+
+  d.forEach(function(char, i) {
+    if (i !== T_INDEX && i !== Z_INDEX && isNaN(parseInt(char))) return false; 
+  });
+
+  return true;
+}
