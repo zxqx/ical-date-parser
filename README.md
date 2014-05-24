@@ -1,6 +1,6 @@
 # ical-date-parser
 
-Provides a simple class for parsing iCal formatted dates into native Date objects.
+Provides a simple class for parsing [iCal formatted dates](http://www.kanzaki.com/docs/ical/dateTime.html) into native Date objects.
 
 ## Installation
 
