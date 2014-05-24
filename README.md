@@ -18,7 +18,7 @@ new ICalDateParser(icalDate).parse();
 
 ## Test
 
-Test are run with `tape` by running:
+Tests are done with `tape` by running:
 
 ```
 $ npm test
