@@ -13,7 +13,8 @@
   "keywords": [
     "ical",
     "date",
-    "parse"
+    "parse",
+    "ics"
   ],
   "author": "Zak Angelle",
   "license": "MIT",
