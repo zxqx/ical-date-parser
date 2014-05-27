@@ -18,12 +18,15 @@ $ npm install ical-date-parser
 ```js
 var ICalDateParser = require('ical-date-parser');
 
-new ICalDateParser(icalDate).parse();
+new ICalDateParser('20140422T233000Z').parse();
+
+// output
+'2014-04-22T23:30:00.000Z'
 ```
 
 ## Test
 
-Tests are done with `tape` by running:
+Tests are done with [tape](https://github.com/substack/tape) by running:
 
 ```
 $ npm test
