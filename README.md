@@ -1,6 +1,6 @@
 # ical-date-parser
 
-Provides a simple class for parsing [iCal formatted dates](http://www.kanzaki.com/docs/ical/dateTime.html) into native Date objects.
+A simple class for parsing [iCal formatted dates](http://www.kanzaki.com/docs/ical/dateTime.html) into native Date objects.
 
 [![Build Status](https://travis-ci.org/zakangelle/ical-date-parser.png?branch=master)](https://travis-ci.org/zakangelle/ical-date-parser)
 
