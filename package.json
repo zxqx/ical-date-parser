@@ -1,6 +1,6 @@
 {
   "name": "ical-date-parser",
-  "version": "1.8.6",
+  "version": "1.8.7",
   "description": "Convert iCal formatted date to native Date object",
   "main": "index.js",
   "scripts": {
