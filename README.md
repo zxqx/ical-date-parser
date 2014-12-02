@@ -4,9 +4,6 @@ Parse a stringly typed [iCal formatted date](http://www.kanzaki.com/docs/ical/da
 
 [![Build Status](https://travis-ci.org/zakangelle/ical-date-parser.png?branch=master)](https://travis-ci.org/zakangelle/ical-date-parser)
 
-[![browser support](https://ci.testling.com/zakangelle/ical-date-parser.png)
-](https://ci.testling.com/zakangelle/ical-date-parser)
-
 ## Installation
 
 ```
