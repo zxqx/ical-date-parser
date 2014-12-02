@@ -43,9 +43,6 @@ function validateFormat(date)
   // Return false if any of the expected numbers aren't numbers
   return d.every(function(char, i) {
     var charNotNumber = i !== T_INDEX && i !== Z_INDEX && isNaN(parseInt(char));
-    if (charNotNumber) {
-      return false; 
-    } 
-    return true;
+    return (charNotNumber) ? false : true;
   });
 }
