@@ -1,23 +1,12 @@
-module.exports = ICalDateParser;
-
-/**
- * @constructor
- * @param {string} d
- */
-function ICalDateParser(d)
-{
-  this._date      = d;
-  this.parsedDate = null;
-}
+module.exports = iCalDateParser;
 
 /**
  * Parse a stringly typed iCal formatted date into a native JS date object
+ * @param {string} date
  * @return {Date}
  */
-ICalDateParser.prototype.parse = function()
+function iCalDateParser(date)
 {
-  var date = this._date;
-
   if (!date) throw 'No date specified';
   if (!validateFormat(date)) throw 'Invalid format';
 
@@ -28,10 +17,10 @@ ICalDateParser.prototype.parse = function()
   var minute = date.substr(11, 2);
   var second = date.substr(13, 2);
 
-  this.parsedDate = new Date(Date.UTC(year, month, day, hour, minute, second));
+  var parsedDate = new Date(Date.UTC(year, month, day, hour, minute, second));
   
-  return this.parsedDate;
-};
+  return parsedDate;
+}
 
 /**
  * Check whether or not a given date is a valid iCal formatted date

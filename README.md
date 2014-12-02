@@ -1,6 +1,6 @@
 # ical-date-parser
 
-A simple class for parsing [iCal formatted dates](http://www.kanzaki.com/docs/ical/dateTime.html) into native Date objects.
+Parse a stringly typed [iCal formatted date](http://www.kanzaki.com/docs/ical/dateTime.html) into a native JS date object.
 
 [![Build Status](https://travis-ci.org/zakangelle/ical-date-parser.png?branch=master)](https://travis-ci.org/zakangelle/ical-date-parser)
 
@@ -16,9 +16,9 @@ $ npm install ical-date-parser
 ## Usage
 
 ```js
-var ICalDateParser = require('ical-date-parser');
+var iCalDateParser = require('ical-date-parser');
 
-new ICalDateParser('20140422T233000Z').parse();
+iCalDateParser('20140422T233000Z');
 
 // output
 '2014-04-22T23:30:00.000Z'
