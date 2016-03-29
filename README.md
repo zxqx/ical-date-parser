@@ -2,7 +2,7 @@
 
 Parse a stringly typed [iCal formatted date](http://www.kanzaki.com/docs/ical/dateTime.html) into a native JS date object.
 
-[![Build Status](https://travis-ci.org/zakangelle/ical-date-parser.png?branch=master)](https://travis-ci.org/zakangelle/ical-date-parser)
+[![Build Status](https://travis-ci.org/zakangelle/ical-date-parser.svg?branch=master)](https://travis-ci.org/zakangelle/ical-date-parser)
 
 ## Installation
 

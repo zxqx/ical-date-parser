@@ -18,7 +18,7 @@ function iCalDateParser(date)
   var second = date.substr(13, 2);
 
   var parsedDate = new Date(Date.UTC(year, month, day, hour, minute, second));
-  
+
   return parsedDate;
 }
 
