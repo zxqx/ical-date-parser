@@ -14,7 +14,8 @@
     "ical",
     "date",
     "parse",
-    "ics"
+    "ics",
+    "calendar"
   ],
   "author": "Zak Angelle",
   "license": "MIT",
