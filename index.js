@@ -7,19 +7,22 @@ module.exports = iCalDateParser;
  */
 function iCalDateParser(date)
 {
-  if (!date) throw 'No date specified';
-  if (!validateFormat(date)) throw 'Invalid format';
+  if (!date) {
+    throw new Error('No date specified');
+  }
 
-  var year   = date.substr(0, 4);
-  var month  = parseInt(date.substr(4, 2), 10) -1;
-  var day    = date.substr(6, 2);
-  var hour   = date.substr(9, 2);
-  var minute = date.substr(11, 2);
-  var second = date.substr(13, 2);
+  if (!validateFormat(date)) {
+    throw new Error('Invalid format');
+  }
 
-  var parsedDate = new Date(Date.UTC(year, month, day, hour, minute, second));
+  const year = date.substr(0, 4);
+  const month = parseInt(date.substr(4, 2), 10) -1;
+  const day = date.substr(6, 2);
+  const hour = date.substr(9, 2);
+  const minute = date.substr(11, 2);
+  const second = date.substr(13, 2);
 
-  return parsedDate;
+  return new Date(Date.UTC(year, month, day, hour, minute, second));
 }
 
 /**
@@ -29,10 +32,10 @@ function iCalDateParser(date)
  */
 function validateFormat(date)
 {
-  var T_INDEX = 8;
-  var Z_INDEX = 15;
+  const T_INDEX = 8;
+  const Z_INDEX = 15;
 
-  var d = date.split('');
+  const d = date.split('');
 
   // Some basic checking
   if (!d instanceof String) return false;
@@ -40,9 +43,12 @@ function validateFormat(date)
   if (d[T_INDEX] !== 'T') return false;
   if (d[Z_INDEX] !== 'Z') return false;
 
-  // Return false if any of the expected numbers aren't numbers
-  return d.every(function(char, i) {
-    var charNotNumber = i !== T_INDEX && i !== Z_INDEX && isNaN(parseInt(char));
-    return (charNotNumber) ? false : true;
+  // Kick out if any of the expected numbers aren't numbers
+  return d.every((character, i) => {
+    const charNotNumber = i !== T_INDEX
+      && i !== Z_INDEX
+      && isNaN(parseInt(character));
+
+    return charNotNumber ? false : true;
   });
 }

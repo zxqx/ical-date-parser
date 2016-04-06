@@ -13,7 +13,7 @@ $ npm install ical-date-parser
 ## Usage
 
 ```js
-var iCalDateParser = require('ical-date-parser');
+import iCalDateParser from 'ical-date-parser';
 
 iCalDateParser('20140422T233000Z');
 
