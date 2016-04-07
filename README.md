@@ -21,6 +21,14 @@ iCalDateParser('20140422T233000Z');
 '2014-04-22T23:30:00.000Z'
 ```
 
+## Standalone
+
+Generate a standalone build in `dist` (for use with `<script>` tags and AMD module loaders):
+
+```sh
+$ npm run build:standalone
+```
+
 ## Test
 
 Tests are done with [tape](https://github.com/substack/tape) by running:
