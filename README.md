@@ -16,9 +16,6 @@ $ npm install ical-date-parser
 import iCalDateParser from 'ical-date-parser';
 
 iCalDateParser('20140422T233000Z');
-
-// output
-'2014-04-22T23:30:00.000Z'
 ```
 
 ## Standalone
