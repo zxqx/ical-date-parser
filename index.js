@@ -12,11 +12,11 @@ function iCalDateParser(date)
   }
 
   if (!validateFormat(date)) {
-    throw new Error('Invalid format');
+    throw new Error('Not an iCal formatted date');
   }
 
   const year = date.substr(0, 4);
-  const month = parseInt(date.substr(4, 2), 10) -1;
+  const month = parseInt(date.substr(4, 2), 10) - 1;
   const day = date.substr(6, 2);
   const hour = date.substr(9, 2);
   const minute = date.substr(11, 2);
@@ -37,18 +37,12 @@ function validateFormat(date)
 
   const d = date.split('');
 
-  // Some basic checking
   if (!d instanceof String) return false;
   if (d.length !== 16) return false;
   if (d[T_INDEX] !== 'T') return false;
   if (d[Z_INDEX] !== 'Z') return false;
 
-  // Kick out if any of the expected numbers aren't numbers
   return d.every((character, i) => {
-    const charNotNumber = i !== T_INDEX
-      && i !== Z_INDEX
-      && isNaN(parseInt(character));
-
-    return charNotNumber ? false : true;
+    return !(i !== T_INDEX && i !== Z_INDEX && isNaN(parseInt(character)));
   });
 }
