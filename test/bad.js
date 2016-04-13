@@ -1,4 +1,4 @@
-var test           = require('tape');
+var test = require('tape');
 var iCalDateParser = require('../index.js');
 
 test('Null throws error', function(t) {
