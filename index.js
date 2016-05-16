@@ -1,5 +1,8 @@
 module.exports = iCalDateParser;
 
+const T_INDEX = 8;
+const Z_INDEX = 15;
+
 /**
  * Parse a stringly typed iCal formatted date into a native JS date object
  * @param {string} date
@@ -11,7 +14,7 @@ function iCalDateParser(date)
     throw new Error('No date specified');
   }
 
-  if (!validateFormat(date)) {
+  if (!_validateFormat(date)) {
     throw new Error('Not an iCal formatted date');
   }
 
@@ -29,12 +32,10 @@ function iCalDateParser(date)
  * Check whether or not a given date is a valid iCal formatted date
  * @param {string} date
  * @return {boolean}
+ * @private
  */
-function validateFormat(date)
+function _validateFormat(date)
 {
-  const T_INDEX = 8;
-  const Z_INDEX = 15;
-
   const d = date.split('');
 
   if (!d instanceof String) return false;
