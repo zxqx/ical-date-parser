@@ -38,7 +38,6 @@ function _validateFormat(date)
 {
   const d = date.split('');
 
-  if (!d instanceof String) return false;
   if (d.length !== 16) return false;
   if (d[T_INDEX] !== 'T') return false;
   if (d[Z_INDEX] !== 'Z') return false;
