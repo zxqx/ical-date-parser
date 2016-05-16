@@ -44,5 +44,5 @@ function validateFormat(date)
 
   return d
     .filter((x, i) => i !== T_INDEX && i !== Z_INDEX)
-    .every((x, i) => !isNaN(parseInt(x)));
+    .every(x => !isNaN(parseInt(x)));
 }
