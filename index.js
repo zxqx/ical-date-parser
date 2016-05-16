@@ -42,7 +42,7 @@ function validateFormat(date)
   if (d[T_INDEX] !== 'T') return false;
   if (d[Z_INDEX] !== 'Z') return false;
 
-  return d.every((character, i) => {
-    return !(i !== T_INDEX && i !== Z_INDEX && isNaN(parseInt(character)));
-  });
+  return d
+    .filter((x, i) => i !== T_INDEX && i !== Z_INDEX)
+    .every((x, i) => !isNaN(parseInt(x)));
 }
