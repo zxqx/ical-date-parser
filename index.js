@@ -4,18 +4,14 @@ const T_INDEX = 8;
 const Z_INDEX = 15;
 
 /**
- * Parse a stringly typed iCal formatted date into a native JS date object
+ * Parse a stringly typed iCal formatted date as a native JS date object
  * @param {string} date
  * @return {Date}
  */
 function iCalDateParser(date)
 {
-  if (!date) {
-    throw new Error('No date specified');
-  }
-
   if (!_validateFormat(date)) {
-    throw new Error('Not an iCal formatted date');
+    throw new Error('Not a valid iCal date format');
   }
 
   const year = date.substr(0, 4);
