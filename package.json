@@ -1,7 +1,7 @@
 {
   "name": "ical-date-parser",
   "version": "3.1.0",
-  "description": "Parse a stringly typed iCal formatted date into a native JS date object",
+  "description": "Parse a stringly typed iCal formatted date as a native JS date object",
   "main": "index.js",
   "scripts": {
     "build:standalone": "mkdir -p dist && browserify index.js --standalone iCalDateParser > dist/ical-date-parser.js",

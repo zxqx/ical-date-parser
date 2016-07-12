@@ -1,6 +1,6 @@
 # ical-date-parser
 
-Parse a stringly typed [iCal formatted date](http://www.kanzaki.com/docs/ical/dateTime.html) into a native JS date object.
+Parse a stringly typed [iCal formatted date](http://www.kanzaki.com/docs/ical/dateTime.html) as a native JS date object.
 
 [![Circle CI](https://circleci.com/gh/zakangelle/ical-date-parser/tree/master.svg?style=shield)](https://circleci.com/gh/zakangelle/ical-date-parser/tree/master) [![Coverage Status](https://img.shields.io/coveralls/zakangelle/ical-date-parser.svg)](https://coveralls.io/github/zakangelle/ical-date-parser?branch=master)
 
