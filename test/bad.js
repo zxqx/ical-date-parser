@@ -35,7 +35,7 @@ test('Invalid input format throws error', function(t) {
   t.throws(function() {
     iCalDateParser('20a40422T233000Z');
   });
-  
+
   t.throws(function() {
     iCalDateParser('1994-11-05T08:15:30-05:00');
   });
