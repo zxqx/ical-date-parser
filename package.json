@@ -1,6 +1,6 @@
 {
   "name": "ical-date-parser",
-  "version": "3.1.1",
+  "version": "4.0.0",
   "description": "Parse a stringly typed iCal date as a native JS date object.",
   "main": "lib/iCalDateParser.min.js",
   "scripts": {
