@@ -2,11 +2,28 @@
   "name": "ical-date-parser",
   "version": "3.1.1",
   "description": "Parse a stringly typed iCal date as a native JS date object.",
-  "main": "index.js",
+  "main": "lib/iCalDateParser.min.js",
   "scripts": {
-    "build:standalone": "mkdir -p dist && browserify index.js --standalone iCalDateParser > dist/ical-date-parser.js",
-    "test": "tape ./test/**/*.js",
-    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "build": "webpack",
+    "test": "jest",
+    "test:watch": "npm test -- --watchAll",
+    "coverage": "cat ./coverage/lcov.info | coveralls",
+    "lint": "eslint src test",
+    "preversion": "npm run build",
+    "example": "webpack-dev-server --config example/webpack.config.js",
+    "example:build": "cross-env NODE_ENV=production webpack --config example/webpack.config.build.js"
+  },
+  "jest": {
+    "testRegex": "(/test/.*|(\\.|/))\\.js?$",
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "lcov"
+    ]
   },
   "repository": {
     "type": "git",
@@ -26,9 +43,22 @@
   },
   "homepage": "https://github.com/zakangelle/ical-date-parser",
   "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.3.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
     "browserify": "^13.0.0",
     "coveralls": "^2.11.9",
-    "nyc": "^6.4.0",
-    "tape": "^2.13.1"
+    "cross-env": "^3.1.4",
+    "eslint": "^3.16.1",
+    "eslint-loader": "^1.6.3",
+    "extract-text-webpack-plugin": "^2.0.0",
+    "html-webpack-plugin": "^2.28.0",
+    "jest": "^19.0.2",
+    "tape": "^2.13.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
   }
 }
