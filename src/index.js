@@ -1,5 +1,3 @@
-module.exports = iCalDateParser;
-
 const T_INDEX = 8;
 const Z_INDEX = 15;
 
@@ -8,8 +6,7 @@ const Z_INDEX = 15;
  * @param {string} date
  * @return {Date}
  */
-function iCalDateParser(date)
-{
+export default function iCalDateParser(date) {
   if (!_validateFormat(date)) {
     throw new Error('Not a valid iCal date format');
   }
@@ -30,8 +27,7 @@ function iCalDateParser(date)
  * @return {boolean}
  * @private
  */
-function _validateFormat(date)
-{
+function _validateFormat(date) {
   const d = date.split('');
 
   if (d.length !== 16) return false;

@@ -14,24 +14,36 @@ $ npm install ical-date-parser
 
 ```js
 import iCalDateParser from 'ical-date-parser';
+```
 
+```js
 iCalDateParser('20140422T233000Z');
 ```
 
-## Standalone
+## Development
 
-Generate a standalone build in `dist` (for use with `<script>` tags and AMD module loaders):
+Install dependencies:
 
-```sh
-$ npm run build:standalone
+```
+$ npm install
 ```
 
-## Test
+Run the example app at [http://localhost:8080](http://localhost:8080):
 
-Tests are done with [tape](https://github.com/substack/tape) by running:
+```
+$ npm run example
+```
+
+Run tests using [jest](https://github.com/facebook/jest):
 
 ```
 $ npm test
+```
+
+Run tests and watch for code changes:
+
+```
+$ npm run test:watch
 ```
 
 ## License
